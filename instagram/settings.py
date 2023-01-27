@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wm2sj^19r+29n2b^3j2+#$-0_9#t#bw_l5)m%73+7ojj@2dh%f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'user',
     # 'follow',
     # 'direct_message',
-    # 'post',
+    'post',
     # 'story',
     # 'reels',
     # 'comment',
