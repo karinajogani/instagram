@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wm2sj^19r+29n2b^3j2+#$-0_9#t#bw_l5)m%73+7ojj@2dh%f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,14 +41,14 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'user',
-    # 'follow',
-    # 'direct_message',
+    'follow',
+    'direct_message',
     'post',
-    # 'story',
-    # 'reels',
-    # 'comment',
-    # 'like',
-    # 'share',
+    'story',
+    'reels',
+    'comment',
+    'like',
+    'share',
 ]
 
 MIDDLEWARE = [
@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
