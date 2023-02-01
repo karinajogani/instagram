@@ -5,7 +5,7 @@ import uuid
 
 # Create your models here.
 class Story(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    story_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     image = models.ImageField(upload_to='stories/')
     title = models.CharField(max_length=255, blank=True)
     user = models.ManyToManyField(User, related_name='%(class)s_created_by')

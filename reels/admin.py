@@ -4,4 +4,4 @@ from .models import Reels
 
 @admin.register(Reels)
 class ReelsAdmin(admin.ModelAdmin):
-    list_display = ['id', 'video', 'caption', 'created_by', 'viewed_by', 'created_at', 'updated_at']
+    list_display = ['reels_id', 'video', 'caption', 'created_by', 'viewed_by', 'created_at', 'updated_at']

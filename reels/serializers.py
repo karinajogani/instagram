@@ -9,4 +9,4 @@ class ReelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Reels
-        fields = ('id', 'video', 'caption', 'created_by', 'viewed_by', 'created_at', 'updated_at')
+        fields = ('reels_id', 'video', 'caption', 'created_by', 'viewed_by', 'created_at', 'updated_at')

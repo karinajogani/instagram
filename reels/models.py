@@ -4,7 +4,7 @@ from django.conf import settings
 import uuid
 # Create your models here.
 class Reels(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    reels_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     video = models.FileField(upload_to='reels_video/')
     caption = models.CharField(max_length=255)
     user = models.ManyToManyField(User, related_name='%(class)s_created_by')

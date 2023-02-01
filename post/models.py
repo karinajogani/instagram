@@ -6,7 +6,7 @@ import uuid
 # Create your models here.
 
 class Post(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    post_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     photo = models.ImageField(upload_to='postapi/')
     caption = models.TextField(blank=True)
     created_by = models.ForeignKey(User,on_delete=models.CASCADE, related_name="created_by")

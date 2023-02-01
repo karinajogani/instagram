@@ -4,4 +4,4 @@ from .models import Story
 
 @admin.register(Story)
 class StoryAdmin(admin.ModelAdmin):
-    list_display = ['id', 'image', 'title', 'created_by', 'viewed_by', 'created_at', 'expires_at']
+    list_display = ['story_id', 'image', 'title', 'created_by', 'viewed_by', 'created_at', 'expires_at']

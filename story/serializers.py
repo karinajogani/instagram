@@ -9,4 +9,4 @@ class StorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Story
-        fields = ('id', 'image', 'title', 'created_by', 'viewed_by', 'created_at', 'expires_at')
+        fields = ('story_id', 'image', 'title', 'created_by', 'viewed_by', 'created_at', 'expires_at')

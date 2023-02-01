@@ -16,6 +16,18 @@ class LikeAPI(APIView):
         serializer = LikeSerializer(stu, many=True)
         return Response(serializer.data)   
 
+    def get(self, request, pk1=None, format=None):
+        id = pk1
+        if id is not None:
+            stu = Like.type_id.count()
+        
+            serializer = LikeSerializer(stu)
+            return Response(serializer.data)
+            
+        stu = Like.objects.all()
+        serializer = LikeSerializer(stu, many=True)
+        return Response(serializer.data)
+
     def post(self, request, format=None):
         serializer = LikeSerializer(data=request.data)
         if serializer.is_valid():

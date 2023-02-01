@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-# from user import views
+from user import views
+from . import views
 # from post import views
 # from story import views
 # from comment import views
@@ -11,26 +12,25 @@ from rest_framework.routers import DefaultRouter
 # from reels import views
 # from reels.views import ReelViewSet
 # from follow import views
-from direct_message import views
-
+# from direct_message import views
 
 """we import this for jwt token create, refresh, verify"""
-# from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
-# """we create default url which call user api"""
-# router = DefaultRouter()
-# router.register("user",views.Userapi, basename="user")
+"""we create default url which call user api"""
+router = DefaultRouter()
+router.register("user",views.Userapi, basename="user")
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     #"when we call curd url it will give as student url by which we can use our api"
-#     path("curd/", include(router.urls)),
-#     path("gettoken/", TokenObtainPairView.as_view(), name="token"),
-#     path("refreshtoken/", TokenRefreshView.as_view(), name="token_refresh"),
-#     path("verifytoken/", TokenVerifyView.as_view(), name="token_verify"),
-# ]  
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    #"when we call curd url it will give as student url by which we can use our api"
+    path("curd/", include(router.urls)),
+    path("gettoken/", TokenObtainPairView.as_view(), name="token"),
+    path("refreshtoken/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("verifytoken/", TokenVerifyView.as_view(), name="token_verify"),
+]  
 
-# router.register('student', views.postapi, basename='student_')
+router.register('student', views.postapi, basename='student_')
 
 
 # urlpatterns = [
@@ -58,14 +58,15 @@ from direct_message import views
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
-#     # path('commentapi/', views.CommentAPI.as_view()),
-#     # path('commentapi/<int:pk>/', views.CommentAPI.as_view()),
+#     path('commentapi/', views.CommentAPI.as_view()),
+#     path('commentapi/<int:pk>/', views.CommentAPI.as_view()),
 # ]
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
 #     path('likeapi/', views.LikeAPI.as_view()),
 #     path('likeapi/<int:pk>/', views.LikeAPI.as_view()),
+#     path('likeapi/<int:pk1>/1', views.LikeAPI.as_view()),
 # ]
 
 
@@ -81,8 +82,8 @@ from direct_message import views
 #     path('followapi/<int:pk>/', views.FollowAPI.as_view()),
 # ]
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('directmessageapi/', views.DirectMessageAPI.as_view()),
-    path('directmessageapi/<int:pk>/', views.DirectMessageAPI.as_view()),
-]
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('directmessageapi/', views.DirectMessageAPI.as_view()),
+#     path('directmessageapi/<int:pk>/', views.DirectMessageAPI.as_view()),
+# ]

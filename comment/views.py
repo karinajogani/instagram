@@ -20,6 +20,7 @@ class CommentAPI(APIView):
         serializer = CommentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
+            print(serializer.type)
             return Response({'msg':'Data Created'})
         return Response(serializer.errors)
 
